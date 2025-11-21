@@ -1,21 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "dist/index.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/index.js"
-    }
-  ],
   "env": {
     "APP_VERSION": "1.0.0"
   },
-  "buildCommand": "pnpm run build",
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "rewrites": [{ "source": "/(.*)", "destination": "dist/server.js" }],
   "installCommand": "pnpm install",
-  "outputDirectory": "dist"
+  "buildCommand": "pnpm run build"
 }

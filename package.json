@@ -2,13 +2,13 @@
   "name": "learn-vercel-deploy",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "type": "module",
   "scripts": {
     "dev": "tsx --no-warnings --env-file=.env --watch src/server.ts",
     "build": "tsc -p tsconfig.json",
-    "start:local": "node --no-warnings --env-file=.env  dist/index.js",
-    "start": "node --no-warnings  dist/index.js"
+    "start:local": "node --no-warnings --env-file=.env  dist/server.js",
+    "start": "node --no-warnings  dist/server.js"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
